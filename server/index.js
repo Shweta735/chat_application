@@ -3,8 +3,11 @@ const socketio = require("socket.io");
 const app = express();
 const router = require('./router');
 const users = require('./users').usersObject;
+const cors = require("cors");
 
 app.use(router);
+
+app.use(cors());
 var server = app.listen(5000, function () {
 	console.log("Listening to port 5000")
 })
